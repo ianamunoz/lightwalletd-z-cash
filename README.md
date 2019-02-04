@@ -42,3 +42,20 @@ bash Dockerfiles/lightwalletd/run_zcashd_container.sh
 
 ToDo: TLS termination via load balancer or through gRPC library.
 ToDo: Finish and clean up `docker-compose.yml` stack deploy.
+
+# Check that it is running
+
+Fetch [docker-grpcurl](https://github.com/datawire/docker-grpcurl)
+
+```
+curl -LO https://raw.githubusercontent.com/datawire/docker-grpcurl/master/grpcurl.sh && chmod +x grpcurl.sh
+```
+(I had to remove the 'set' in that script for it to run)
+
+Check the API is up. It will return the latest block indexed into lightwallet db.
+```
+./grpcurl.sh -plaintext localhost:9067 cash.z.wallet.sdk.rpc.CompactTxStreamer/GetLatestBlock
+{
+  "height": ${SOME_INTEGER_HEIGHT}
+}
+```
