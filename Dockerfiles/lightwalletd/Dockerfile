@@ -53,6 +53,8 @@ RUN echo "rpcuser=zcash" > ${ZCASH_CONF} && \
         echo "rpcpassword=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo ''`" >> ${ZCASH_CONF} && \
         echo "addnode=testnet.z.cash" >> ${ZCASH_CONF} && \
         echo "testnet=1" >> ${ZCASH_CONF} && \
+        echo "rpcbind=127.0.0.1" >> ${ZCASH_CONF} && \
+        echo "rpcport=8232" >> ${ZCASH_CONF} && \
         echo "zmqpubcheckedblock=tcp://127.0.0.1:28332" >> ${ZCASH_CONF} && \
         echo "Success"
 
