@@ -40,9 +40,6 @@ Run the container. Make sure you have whatever firewall open on port 9067.
 bash Dockerfiles/lightwalletd/run_zcashd_container.sh
 ```
 
-ToDo: TLS termination via load balancer or through gRPC library.
-ToDo: Finish and clean up `docker-compose.yml` stack deploy.
-
 # Check that it is running
 
 Fetch [docker-grpcurl](https://github.com/datawire/docker-grpcurl)
@@ -59,3 +56,8 @@ Check the API is up. It will return the latest block indexed into lightwallet db
   "height": ${SOME_INTEGER_HEIGHT}
 }
 ```
+
+# ToDo
+
+1. TLS termination via load balancer or through gRPC library.
+2. Finish and clean up `docker-compose.yml` stack deploy.
