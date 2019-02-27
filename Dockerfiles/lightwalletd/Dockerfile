@@ -32,7 +32,7 @@ ENV GOPATH=$HOME/go
 
 RUN apt-get update
 
-RUN apt-get install -y sudo libgomp1 wget curl libzmq3-dev git supervisor
+RUN apt-get install -y sudo libgomp1 wget curl libzmq3-dev git supervisor libsqlite3-dev
 
 RUN apt-get clean all -y
 
